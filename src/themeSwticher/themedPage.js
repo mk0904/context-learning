@@ -1,11 +1,14 @@
+import React, { useContext } from 'react';
 import Header from './Header';
 import './theme.css';
 
-export default function Page() {
-    return (
-        <div id="app">
-            <Header />
+import { ThemeContext } from './themeContext'; // Updated import statement
 
+export default function Page() {
+    const themeValue = useContext(ThemeContext); // Updated useContext argument
+    return (
+        <div id="app" className={themeValue.theme}> {/* Updated className */}
+            <Header />
             <article>
                 <h2>React Context Learning</h2>
                 <p>
